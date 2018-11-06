@@ -57,6 +57,7 @@ function! s:skeletons.registerSkeleton(file)
 endfunc
 
 function! s:skeletons.registerSkeletons()
+    let self.candidates = {}
     let self.loaded = 1
     "if directory is a string - make it a list
     if type(self.skeletonsDir) == type("")
