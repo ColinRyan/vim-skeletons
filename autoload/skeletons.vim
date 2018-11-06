@@ -118,7 +118,7 @@ function! s:skeletons.insertSkeleton()
     endif
 endfunc
 
-function! skeletons#registerSkeletons()
+function! skeletons#RegisterSkeletons()
     call s:skeletons.registerSkeletons()
 endfunc
 
