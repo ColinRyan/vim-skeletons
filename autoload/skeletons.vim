@@ -110,7 +110,7 @@ function! s:skeletons.insertSkeleton()
     " grab file extension of current new file
     let fileExt = expand('%:e')
     if fileExt == ""
-        fileExt = expand('%:r')
+       let fileExt = expand('%:r')
     endif
     let skeletonFile = self.chooseSkeleton(fileExt)
     if len(skeletonFile)>0 && filereadable(skeletonFile)
