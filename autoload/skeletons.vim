@@ -1,7 +1,6 @@
 scriptencoding utf-8
 
-let s:save_cpo = &cpo
-set cpo&vim
+
 
 " taken from https://github.com/Shougo/neomru.vim/blob/master/autoload/neomru.vim
 function! skeletons#setDefault(var, val, ...)  "{{{
@@ -130,5 +129,4 @@ function! skeletons#InsertSkeleton()
     call s:skeletons.insertSkeleton()
 endfunc
 
-let &cpo = s:save_cpo
-unlet s:save_cpo
+
