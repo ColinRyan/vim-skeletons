@@ -13,7 +13,10 @@ endfunction "}}}
 function! skeletons#skeletonsOn()
     augroup skeletons
         autocmd!
-        autocmd BufNewFile * call skeletons#InsertSkeleton()
+        " Deferred one tick: BufEnter for the new buffer fires after
+        " BufNewFile, and UltiSnips ends any active snippet on BufEnter
+        " (it treats it as leaving the buffer), killing tabstops/mirrors.
+        autocmd BufNewFile * call timer_start(0, {-> skeletons#InsertSkeleton()})
     augroup END
 endfunction
 
